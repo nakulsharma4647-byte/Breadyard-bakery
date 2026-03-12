@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Breadyard Bakery & Cake | Bahadurgarh</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<style>
+/* --- RESET & BASE STYLES --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #FFF6EE;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- HEADER --- */
+header {
+    background: #2B1A17;
+    color: white;
+    padding: 15px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #D94B5C; /* Accent color for logo */
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #D94B5C;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 80vh;
+    /* Added a dark overlay so text pops */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1559620192-032c4bc4674e') center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.btn {
+    background: #D94B5C;
+    padding: 15px 40px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s, background 0.2s;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #c0394a;
+    transform: translateY(-3px);
+}
+
+/* --- SECTIONS --- */
+.section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #2B1A17;
+    margin-bottom: 40px;
+}
+
+/* --- CARDS --- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    border-top: 5px solid #D94B5C;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h3 {
+    color: #2B1A17;
+    margin-bottom: 15px;
+}
+
+/* --- REVIEWS --- */
+.review {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 700px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    font-style: italic;
+}
+
+.stars {
+    color: #FFD700;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* --- CONTACT & MAP --- */
+.contact-box {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.contact-info {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.map-container {
+    width: 100%;
+    height: 300px;
+    background: #eee;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: #2B1A17;
+    color: #ccc;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* --- WHATSAPP FLOAT --- */
+.whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    padding: 12px 25px;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s;
+}
+
+.whatsapp:hover {
+    transform: scale(1.05);
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    nav {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .section {
+        padding: 50px 5%;
+    }
+    
+    .whatsapp {
+        padding: 10px 20px;
+        font-size: 14px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Breadyard Bakery</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Menu</a>
+        <a href="#">Reviews</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Fresh Cakes & Perfect Coffee</h1>
+    <p>Bahadurgarh's favorite bakery café</p>
+    <a class="btn" href="tel:07856070707">Order Custom Cake</a>
+</section>
+
+<section class="section">
+    <h2>Why Customers Love Us</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>🍰 Fresh Cakes & Pastries</h3>
+            <p>Soft, creamy cakes and pastries baked fresh daily right here in Bahadurgarh.</p>
+        </div>
+        <div class="card">
+            <h3>🎂 Custom Birthday Cakes</h3>
+            <p>Beautiful, personalized cakes made for birthdays, anniversaries, and celebrations.</p>
+        </div>
+        <div class="card">
+            <h3>☕ Cozy Café Experience</h3>
+            <p>Relax with our premium coffee, sandwiches, and snacks in a comfortable seating area.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Customer Reviews</h2>
+    <div class="review">
+        <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+        <p>"Fresh cakes and pastries every time. One of the best bakeries in Bahadurgarh. Highly recommended!"</p>
+    </div>
+    <div class="review">
+        <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+        <p>"Custom cake looked beautiful and tasted perfect. The staff was very helpful."</p>
+    </div>
+    <div class="review">
+        <div class="stars">⭐ ⭐ ⭐ ⭐ ⭐</div>
+        <p>"Great ambience and comfortable seating. Perfect for coffee dates with friends."</p>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <h2>Visit Us</h2>
+    <div class="contact-box">
+        <div class="contact-info">
+            <p>📍 Delhi-Rohtak Road, Bahadurgarh</p>
+            <p>📞 Phone: 078560 70707</p>
+            <p>⏰ Open Daily: 8:00 AM - 10:00 PM</p>
+        </div>
+        
+        <a class="btn" href="tel:07856070707">Call Now</a>
+
+        <!-- Google Maps Placeholder -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.6!2d77.0!3d28.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM2JzAwLjAiTiA3N8KwMDAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2023 Breadyard Bakery & Cake</p>
+    <p>Fresh Cakes • Coffee • Pastries</p>
+    <p>Phone: 078560 70707</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/917856070707">
+    <span>WhatsApp Order</span>
+</a>
+
+</body>
+</html>
